@@ -1,17 +1,20 @@
 html{
     font-size: 62.5%;
     color: hsl(0, 0%, 100%);
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 body{
     font-size: 1.4rem;
     font-family: 'Raleway', sans-serif;
+    background-color: var(--color-intro-background);
 }
 
 /* ------HEADER------ */
 
 .header .header-container{
-    background-color: hsl(217, 28%, 15%);
+    background-color: var(--color-intro-background);;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: space-between;
@@ -26,7 +29,8 @@ body{
 /* ------INTRO------ */
 
 .intro{
-    background-color: hsl(217, 28%, 15%);
+    background: url(../images/bg-curvy-desktop.svg) no-repeat center bottom;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -35,6 +39,7 @@ body{
 
 .intro img{
     height: 45rem;
+    margin-top: 5rem;
     margin-bottom: 2rem;
 }
 
@@ -56,18 +61,28 @@ body{
 }
 
 .intro .intro-presetation .btn-intro{
-    background-color: var(--color-btn);
-    border-radius: 20px;
+    background-image: linear-gradient(to right, var(--color-btn-1), var(--color-btn-2));
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    border-radius: 25px;
     width: 25rem;
     height: 5rem;
     border: none;
     color: var(--color-font) ;
     margin-bottom: 7rem;
-    font-size: 1.4rem;
+    transition: 0.5s;
+}
 
+.intro .intro-presetation .btn-intro:hover{
+    cursor: pointer;
 }
 
 @media(max-width: 725px){
+    .intro{
+        background: url(../images/bg-curvy-mobile.svg) no-repeat center bottom;
+        background-size: contain;
+    }
+
     .intro img{
         height: 30rem;
     }
@@ -88,7 +103,7 @@ body{
     }
 
     .intro .intro-presetation .btn-intro{
-        width: 15rem;
+        width: 18rem;
         height: 4rem;
     
     }
@@ -202,18 +217,25 @@ body{
     width: 60%;
 }
 
-.teams .team p,
-.teams .team a{
-    line-height: 2.5rem;
+.teams .team p{
+    line-height: 2rem;
     width: 90%;
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
     transition: 0.3s ease-in-out;
 }
 
-.teams .team a:hover{
+.teams .team a{
     text-decoration: underline;
+    color: var(--color-btn-1);
+}
+
+.teams .team a:hover{
     font-weight: 700;
+}
+
+.teams .team img{
+    padding: 0;
 }
 
 @media(max-width: 1200px){
@@ -253,6 +275,10 @@ body{
 @media(max-width: 725px){
     .teams img{
         height: 350px;
+    }
+
+    .team a img{
+        height: 16px;
     }
 
 }
@@ -403,6 +429,8 @@ body{
 }
 
 .sign-in .form div input{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
     border: none;
     border-radius: 2rem;
     height: 4rem;
@@ -412,17 +440,29 @@ body{
 }
 
 .sign-in .form div a{
-    width: 25%;
+    width: 30%;
     margin-left: 1.5rem;
 }
 
 .sign-in .form div button{
-    background-color: var(--color-btn);
+    background-image: linear-gradient(to right, var(--color-btn-1), var(--color-btn-2));
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.4rem;
     color: var(--color-font);
     border: none;
     border-radius: 2rem;
     height: 4rem;
     width: 100%;
+}
+
+.sign-in .form div button:hover{
+    cursor: pointer;
+}
+
+@media(max-width: 1080px){
+    .sign-in .form div a{
+        width: 42%;
+    }
 }
 
 @media(max-width: 768px){
@@ -518,9 +558,17 @@ body{
 }
 
 .footer .footer-container .contact p,
-.footer .footer-container .about p,
-.footer .footer-container .contact-us p{
+.footer .footer-container .about li,
+.footer .footer-container .contact-us li{
     margin-bottom: 2rem;
+    
+}
+
+.footer .footer-container .about a:hover,
+.footer .footer-container .contact-us a:hover,
+.footer .footer-container .social-media a:hover{
+    transition: 0.5s;
+    color: var(--color-btn-1);
 }
 
 .footer .footer-container .social-media{
